@@ -1,7 +1,7 @@
 let length = prompt('What do you want to be the length of your rectangle');
 let epsilon = 0.001;
-let cx = 400;
-let cy = 400;
+let cx = window.innerWidth / 2;
+let cy = window.innerHeight / 2;
 let d1 = prompt('What do you want to be the first diameter of your ellipse'); 
 let d2 = prompt('What do you want to be the second diameter of your ellipse');
 let c1x = 0;
