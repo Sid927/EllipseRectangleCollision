@@ -1,8 +1,9 @@
+let length = prompt('What do you want to be the length of your rectangle');
 let epsilon = 0.001;
 let cx = 400;
 let cy = 400;
-let d1 = 200; 
-let d2 = 150;
+let d1 = prompt('What do you want to be the first diameter of your ellipse'); 
+let d2 = prompt('What do you want to be the second diameter of your ellipse');
 let c1x = 0;
 let c1y = 0;
 let c2x = 0;
@@ -97,7 +98,7 @@ const checkCollisionEllipseRectangle = (pointsOnEllipse, rx1, ry1, rx2, ry2) => 
 }
 
 function setup() {
-  createCanvas(750, 750);
+  createCanvas(window.innerWidth, window.innerHeight);
   pointsOnEllipse = getPointsOnEllipse(cx, cy, d1, d2, 100, epsilon);
 }
 
@@ -106,9 +107,9 @@ function draw() {
   hit2 = false;
   background(255);
   ellipse(cx, cy, d1, d2);
-  rect(mouseX, mouseY, 50, 50);
-  rx2 = mouseX + 50;
-  ry2 = mouseY + 50;
+  rect(mouseX, mouseY, length, length / 2);
+  rx2 = mouseX + length;
+  ry2 = mouseY + length / 2;
   hit = checkCollisionEllipseRectangle(pointsOnEllipse, mouseX, mouseY, rx2, ry2);
   hit2 = checkCollisionPointEllipse(mouseX, mouseY, c1x, c1y, c2x, c2y, l)
   console.log(hit + ' ' + hit2)
