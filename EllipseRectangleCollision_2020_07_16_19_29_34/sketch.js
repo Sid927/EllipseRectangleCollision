@@ -10,8 +10,6 @@ let c2x = 0;
 let c2y = 0;
 let l = 0;
 let numPoints = 180;
-let rx1 = 300;
-let ry1 = 400;
 let rx2 = 0;
 let ry2 = 0;
 let hit = false;
@@ -111,9 +109,9 @@ function draw() {
   rx2 = mouseX + length;
   ry2 = mouseY + length / 2;
   hit = checkCollisionEllipseRectangle(pointsOnEllipse, mouseX, mouseY, rx2, ry2);
-  hit2 = checkCollisionPointEllipse(mouseX, mouseY, c1x, c1y, c2x, c2y, l)
+//   hit2 = checkCollisionPointEllipse(mouseX, mouseY, c1x, c1y, c2x, c2y, l)
   console.log(hit + ' ' + hit2)
-  stroke( (hit) || (hit2) ? color("red"): 0);
+  stroke( (hit) /*|| (hit2)*/ ? color("red"): 0);
   // console.log('Colliding: ' + hit)
   // for (let i = 0; i < pointsOnEllipse.length; i++) {
   //   circle(pointsOnEllipse[i][0], pointsOnEllipse[i][1], 15);
